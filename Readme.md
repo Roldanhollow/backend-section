@@ -101,3 +101,17 @@ const { NotFoundMiddleware, ErrorMiddleware } = require("../middlewares");
 //Errores
 router.use(NotFoundMiddleware).use(ErrorMiddleware);
 ```
+
+### Creación de los modelos para luego inyectarlos en el container
+
+- user.model.js
+- idea.model.js >> Para que funcione el autopopulate: true debemos importar la librería npm i mongoose-autopopulate (IdeaSchema.plugin(require("mongoose-autopopulate"));)
+- comment.model.js (CommentSchema.plugin(require("mongoose-autopopulate"));)
+
+```javascript
+//models
+const {User, Comment, Idea} = require("../models");
+...
+
+
+```
